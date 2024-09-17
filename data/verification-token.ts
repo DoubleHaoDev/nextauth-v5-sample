@@ -10,6 +10,7 @@ export const getVerificationTokenByToken = async (
         });
         return verificationToken;
     } catch (error){
+        console.error(error);
         return null;
     }
 };
