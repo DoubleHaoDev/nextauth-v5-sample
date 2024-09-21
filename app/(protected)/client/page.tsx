@@ -1,16 +1,18 @@
+"use client";
 import React from 'react';
 import {auth} from "@/auth";
 import {currentUser} from "@/lib/auth";
 import {UserInfo} from "@/components/user-info";
+import {useCurrentUser} from "@/hooks/use-current-user";
 
-const ServerPage = async () => {
-    const user = await currentUser();
+const ClientPage = () => {
+    const user = useCurrentUser();
     return (
         <UserInfo
             user={user}
-            label="Server Component"
+            label="Client Component"
         />
     );
 };
 
-export default ServerPage;
+export default ClientPage;
